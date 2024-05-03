@@ -1,0 +1,31 @@
+Complete Your First Project in R
+Exploring Customer Data
+
+```{r}
+#run first
+library(openxlsx)
+library(dplyr)
+sales <- read.xlsx("Red30 Tech Sales.xlsx",1,detectDates = TRUE)
+```
+
+```{r}
+#get count of years by number of customers 
+
+```
+
+```{r}
+#review customer states when customers were added
+
+```
+
+```{r}
+#sort data by date customer added, newest customers
+
+```
+
+```{r}
+#sort data by date customer added, oldest customers
+
+```
+
+

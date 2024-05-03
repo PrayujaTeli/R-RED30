@@ -1,0 +1,33 @@
+Complete Your First Project in R
+Exploring Customer Data
+
+```{r}
+#get working directory
+getwd()
+```
+
+
+```{r}
+#install rmarkdown package
+install.packages("rmarkdown")
+```
+
+
+```{r}
+#install openxlsx package
+install.packages("openxlsx")
+```
+
+
+```{r}
+#import openxlsx package
+library(openxlsx)
+```
+
+
+```{r}
+#load Red30 Tech Sales data
+sales <- read.xlsx("Red30 Tech Sales.xlsx",1,detectDates = TRUE)
+sales
+```
+

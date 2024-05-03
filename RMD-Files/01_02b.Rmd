@@ -1,0 +1,31 @@
+Complete Your First Project in R
+Exploring Customer Data
+
+```{r}
+#get working directory
+
+```
+
+
+```{r}
+#install rmarkdown package
+
+```
+
+
+```{r}
+#install openxlsx package
+
+```
+
+
+```{r}
+#import openxlsx package
+
+```
+
+
+```{r}
+#load Red30 Tech Sales data
+
+```

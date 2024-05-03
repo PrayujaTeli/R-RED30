@@ -1,0 +1,54 @@
+Complete Your First Project in R
+Exploring Customer Data
+
+```{r}
+#run first
+library(openxlsx)
+sales <- read.xlsx("Red30 Tech Sales.xlsx",1,detectDates = TRUE)
+```
+
+```{r}
+#install data table package
+
+```
+
+```{r}
+#import data.table package
+
+```
+
+
+```{r}
+#get sales summary
+
+```
+
+
+```{r}
+#narrow sales summary
+
+```
+
+```{r}
+#payment status value counts
+
+```
+
+```{r}
+#payment status proportions
+
+```
+
+```{r}
+#get payment plan by total number of orders
+
+
+```
+
+
+```{r}
+#check for null values in sales
+
+
+```
+

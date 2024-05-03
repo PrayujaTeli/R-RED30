@@ -1,0 +1,63 @@
+Complete Your First Project in R
+Exploring Customer Data
+
+```{r}
+#run first
+library(openxlsx)
+library(dplyr)
+sales <- read.xlsx("Red30 Tech Sales.xlsx",1,detectDates = TRUE)
+```
+
+```{r}
+#sort data by order total
+
+```
+
+
+```{r}
+#sort data by order quantity
+
+```
+
+```{r}
+#get top products by total number of orders
+
+```
+
+
+```{r}
+#get top product categories by total number of orders
+
+```
+
+
+```{r}
+#review product category proportions
+
+```
+
+```{r}
+#average sales and quantity by product category
+
+```
+
+```{r}
+#total sales and quantity by product category
+
+```
+
+```{r}
+#review product categories sold by sales regions
+
+```
+
+```{r}
+#review product categories sold by order type
+
+```
+
+```{r}
+#review product categories sold by customer type
+
+```
+

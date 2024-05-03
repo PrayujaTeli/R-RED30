@@ -1,0 +1,67 @@
+Complete Your First Project in R
+Exploring Customer Data
+
+```{r}
+#run first
+library(openxlsx)
+library(dplyr)
+sales <- read.xlsx("Red30 Tech Sales.xlsx",1,detectDates = TRUE)
+```
+
+```{r}
+#sort data by order total
+sales[order(sales$Order.Total, decreasing = TRUE), ]
+```
+
+
+```{r}
+#sort data by order quantity
+sales[order(sales$Quantity, decreasing = TRUE), ]
+```
+
+```{r}
+#get top products by total number of orders
+sales %>% count(ProdName, sort = TRUE)
+```
+
+
+```{r}
+#get top product categories by total number of orders
+sales %>% count(ProdCategory, sort = TRUE)
+```
+
+
+```{r}
+#review product category proportions
+prop.table(table(sales$ProdCategory))
+```
+
+```{r}
+#average sales and quantity by product category
+sales %>% group_by(ProdCategory)  %>%
+                    summarise(mean_sales = mean(Order.Total), 
+                              mean_quantity = mean(Quantity))
+```
+
+```{r}
+#total sales and quantity by product category
+sales %>% group_by(ProdCategory)  %>%
+                    summarise(total_sales = sum(Order.Total), 
+                              total_quantity = sum(Quantity))
+```
+
+```{r}
+#review product categories sold by sales regions
+table(sales$ProdCategory, sales$Sales.Region)
+```
+
+```{r}
+#review product categories sold by order type
+table(sales$ProdCategory, sales$OrderType)
+```
+
+```{r}
+#review product categories sold by customer type
+table(sales$ProdCategory, sales$CustomerType)
+```
+

@@ -1,0 +1,48 @@
+Complete Your First Project in R
+Exploring Customer Data
+
+```{r}
+#run first
+library(openxlsx)
+library(data.table)
+sales <- read.xlsx("Red30 Tech Sales.xlsx",1,detectDates = TRUE)
+```
+
+
+```{r}
+#install dplyr package
+
+```
+
+
+```{r}
+#import dplyr package
+
+```
+
+```{r}
+#sort data by order total
+
+```
+
+
+```{r}
+#sort data by order quantity
+
+```
+
+
+```{r}
+#get top N values by customer state
+
+
+
+
+
+
+```
+
+```{r}
+#get top customers by total number of orders
+
+```

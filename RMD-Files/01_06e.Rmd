@@ -1,0 +1,68 @@
+Complete Your First Project in R
+Exploring Customer Data
+
+```{r}
+#run first
+library(openxlsx)
+library(dplyr)
+sales <- read.xlsx("Red30 Tech Sales.xlsx",1,detectDates = TRUE)
+```
+
+```{r}
+#sort data by order total
+sales[order(sales$Order.Total, decreasing = TRUE), ]
+```
+
+
+```{r}
+#sort data by order quantity
+sales[order(sales$Quantity, decreasing = TRUE), ]
+```
+
+
+```{r}
+#get top employees by total number of orders
+sales %>% count(Employee.Name, sort = TRUE)
+```
+
+```{r}
+#get top employee job positions by total number of orders
+sales %>% count(Employee.Job.Title, sort = TRUE)
+```
+
+```{r}
+#review employee job titles
+table(sales$Employee.Job.Title)
+prop.table(table(sales$Employee.Job.Title))
+```
+
+```{r}
+#review employee sales regions
+table(sales$Sales.Region)
+prop.table(table(sales$Sales.Region))
+```
+
+```{r}
+#average sales and quantity by employee job titles
+sales %>% group_by(Employee.Job.Title)  %>%
+                    summarise(mean_sales = mean(Order.Total), 
+                              mean_quantity = mean(Quantity))
+```
+
+```{r}
+#total sales and quantity by employee job titles
+sales %>% group_by(Employee.Job.Title)  %>%
+                    summarise(total_sales = sum(Order.Total), 
+                              total_quantity = sum(Quantity))
+```
+
+```{r}
+#review product categories sold by employee job title
+table(sales$Employee.Job.Title, sales$ProdCategory)
+```
+
+```{r}
+#review product categories sold by employee job title
+table(sales$Employee.Job.Title, sales$Sales.Region)
+```
+

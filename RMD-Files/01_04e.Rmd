@@ -1,0 +1,49 @@
+Complete Your First Project in R
+Exploring Customer Data
+
+```{r}
+#run first
+library(openxlsx)
+library(data.table)
+sales <- read.xlsx("Red30 Tech Sales.xlsx",1,detectDates = TRUE)
+```
+
+
+```{r}
+#install dplyr package
+install.packages("dplyr")
+```
+
+
+```{r}
+#import dplyr package
+library(dplyr)
+```
+
+```{r}
+#sort data by order total
+sales[order(sales$Order.Total, decreasing = TRUE), ]
+```
+
+
+```{r}
+#sort data by order quantity
+sales[order(sales$Quantity, decreasing = TRUE), ]
+```
+
+
+```{r}
+#get top N values by customer state
+data_mod <- sales[order(sales$Order.Total, decreasing = TRUE), ]  
+ 
+data_mod <- data.table(data_mod, key = "CustState")
+
+data_mod <- data_mod[ , head(.SD, 1), by = CustState]
+
+print(data_mod)
+```
+
+```{r}
+#get top customers by total number of orders
+sales %>% count(CustName, sort = TRUE)
+```
